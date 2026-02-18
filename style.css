@@ -1,0 +1,328 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0b0f1a;
+  color: #e5faff;
+  overflow-x: hidden;
+}
+
+/* ---------------- PARTICLES ---------------- */
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -3;
+}
+
+/* ---------------- NAVBAR ---------------- */
+/* ---------------- NAVBAR ---------------- */
+.navbar {
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  padding: 0 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(8, 12, 25, 0.7);
+  /* backdrop-filter: blur(14px); */
+  border-bottom: 1px solid rgba(0, 217, 255, 0.1);
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #e5faff;
+}
+.logo img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar nav a {
+  margin-left: 35px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #9edfff;
+  text-decoration: none;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.navbar nav a:hover {
+  color: #ffffff;
+}
+
+.navbar nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #00d9ff, #7a5cff);
+  transition: 0.3s;
+}
+
+.navbar nav a:hover::after {
+  width: 100%;
+}
+
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8%;
+  position: relative;
+   position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  max-width: 520px;
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+
+.hero h1 span {
+  background: linear-gradient(90deg, #00d9ff, #7a5cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero p {
+  margin: 28px 0;
+  color: #8faac9;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 480px;
+}
+
+.cta{
+  position: relative;
+  z-index: 9999;
+  padding: 16px 45px;
+  border-radius: 60px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #8faac9;
+  background: linear-gradient(90deg, #00d9ff, #7a5cff);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #7a5cff, #00d9ff);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.cta:hover::before {
+  opacity: 1;
+}
+
+.cta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 40px rgba(0,217,255,0.7);
+}
+
+/* ---------------- AI CORE ---------------- */
+.ai-wrapper {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ai-core {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #00d9ff, #7a5cff, #0b0f1a);
+  box-shadow: 0 0 120px rgba(122,92,255,0.5);
+  position: relative;
+  z-index: 2;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Outer Glow */
+.ai-core::before {
+  content: "";
+  position: absolute;
+  inset: -30px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,217,255,0.3), transparent);
+  z-index: -1;
+}
+
+/* ELECTRON RINGS */
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(0,217,255,0.4);
+  animation: rotate linear infinite;
+}
+
+.ring1 {
+  width: 320px;
+  height: 320px;
+  animation-duration: 12s;
+}
+
+.ring2 {
+  width: 370px;
+  height: 370px;
+  animation-duration: 18s;
+  animation-direction: reverse;
+}
+
+/* Small electron dots */
+.ring::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: #00d9ff;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #00d9ff;
+}
+
+/* ---------------- SECTION ---------------- */
+/* ---------------- ABOUT SECTION ---------------- */
+
+.about-section {
+  padding: 150px 8%;
+  text-align: center;
+  position: relative;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #00d9ff, #7a5cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle {
+  max-width: 750px;
+  margin: 0 auto 80px auto;
+  color: #8faac9;
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+/* Feature Grid */
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Glass Cards */
+.feature-card {
+  width: 300px;
+  padding: 40px 30px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.05);
+  /* backdrop-filter: blur(12px); */
+  border: 1px solid rgba(0,217,255,0.15);
+  transition: all 0.4s ease;
+  text-align: left;
+}
+
+.feature-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #00d9ff;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: #9fbad6;
+  line-height: 1.6;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 40px rgba(0,217,255,0.2);
+  border-color: #00d9ff;
+}
+
+/* ---------------- FOOTER ---------------- */
+footer {
+  text-align: center;
+  padding: 40px;
+  color: #7a5cff;
+}
+
+/* ---------------- ANIMATIONS ---------------- */
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ai-wrapper {
+    margin-top: 50px;
+    width: 300px;
+    height: 300px;
+  }
+
+  .ring1 { width: 240px; height: 240px; }
+  .ring2 { width: 280px; height: 280px; }
+
+  .ai-core { width: 180px; height: 180px; }
+}
